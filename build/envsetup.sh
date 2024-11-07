@@ -111,26 +111,3 @@ export SKIP_ABI_CHECKS=true
 export BUILD_HOSTNAME=opala
 export BUILD_USERNAME=unknown
 
-# Função lunch com o prefixo 'crystal'
-function lunch() {
-    local product=$1
-    local variant=$2
-
-    if [[ -z "$product" ]]; then
-        echo "Usage: lunch <product_name>-<build_variant>"
-        return 1
-    fi
-
-    if [[ -z "$variant" ]]; then
-        variant="userdebug"
-    fi
-
-    # Altere 'derp' para 'crystal'
-    export TARGET_PRODUCT=crystal_$product
-    export TARGET_BUILD_VARIANT=$variant
-
-    # Outras configurações necessárias
-    # ...
-
-    echo "Lunching $TARGET_PRODUCT-$TARGET_BUILD_VARIANT ..."
-}
